@@ -4,7 +4,7 @@ let connections = []
 
 const proxyGate = http.createServer((req, res) => {
   console.log('connection to proxy gate')
-}).listen(8081, 'localhost');
+}).listen(8081);
 
 proxyGate.on('connection', (socket) => {
     socket.setKeepAlive(true)
@@ -66,9 +66,9 @@ http.createServer((req, res) => {
   })
   req.pipe(client_req)
 
-}).listen(8080, 'localhost');
+}).listen(8080);
 
 http.createServer((req, res) => {
     res.write('WELCOME to Heroku')
     res.end()
-}).listen(80, 'localhost');
+}).listen(process.env.PORT || 5000);
