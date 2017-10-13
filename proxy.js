@@ -67,3 +67,8 @@ http.createServer((req, res) => {
   req.pipe(client_req)
 
 }).listen(8080, 'localhost');
+
+http.createServer((req, res) => {
+    res.write('WELCOME to Heroku')
+    res.end()
+}).listen(80, 'localhost');
