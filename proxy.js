@@ -69,6 +69,6 @@ http.createServer((req, res) => {
 }).listen(8080);
 
 http.createServer((req, res) => {
-    res.write('WELCOME to Heroku')
+    res.write('WELCOME to Heroku on port ' + process.env.PORT )
     res.end()
 }).listen(process.env.PORT || 5000);
