@@ -45,7 +45,7 @@ server.post('/', function(req, res, next){
 server.listen(3000, host.server);
 
 client({
-    host : "192.168.1.6",
+    host : "tcptunnel.herokuapp.com",
     port : 80
   },
   {
