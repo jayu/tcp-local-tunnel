@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const { client } = require('../index.js')
 
 const host = {
-    proxy : "192.168.1.6",
+    proxy : "255.255.255.255",
     server : "localhost"
 }
 
@@ -42,16 +42,15 @@ server.post('/', function(req, res, next){
   //console.log(req.socket.read())
   res.json({server : true}) 
 });
-server.listen(3000, host.server);
+server.listen(3000);
 
 client({
-    host : "tcptunnel.herokuapp.com",
-    port : 80
+    host : "localhost",
+    port : 8010
   },
   {
     host : 'localhost',
     port : 3000
   },
-  "0123456789012345",
   40
 )
