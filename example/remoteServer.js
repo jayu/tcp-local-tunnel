@@ -1,7 +1,8 @@
 const {proxyServer} = require('../index.js')
 
+/* internet server proxy configuration */
+
 proxyServer({
-	//host: '192.168.1.6',
 	proxyPort: 80,
 	tunnelPort: 8010
 })

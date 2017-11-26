@@ -6,25 +6,22 @@ const bodyParser = require('body-parser')
 
 const { client } = require('../index.js')
 
-const host = {
-    proxy : "255.255.255.255",
-    server : "localhost"
-}
+/* simple express server showcase */
+
+const serverPort = 3000
 
 const server = express();
+
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded());
-server.use('/piki.mp4', express.static('piki.mp4'))
+
 server.get('/someurl', function(req, res, next){
   res.send("some url page") 
   
 });
-server.get('/pikii.mp4', (req, res) => {
+server.get('/video.mp4', (req, res) => {
     res.header('Content-Type', 'video/mp4')
-    fs.createReadStream('piki.mp4').pipe(res)
-})
-server.get('/vp', (req, res) => {
-    fs.createReadStream('vp.exe').pipe(res)
+    fs.createReadStream('neverGonna.mp4').pipe(res)
 })
 server.get('/long.json', (req, res) => {
     const file = fs.readFileSync('long.json')
@@ -35,22 +32,18 @@ server.get('/long.json', (req, res) => {
 server.get('/', function(req, res, next){
   res.send("Main page") 
 });
-server.post('/', function(req, res, next){
-  console.log(req.socket == res.socket)
-  console.log(res.socket.write)
-  //res.socket.write("POST / ")
-  //console.log(req.socket.read())
-  res.json({server : true}) 
-});
-server.listen(3000);
+
+server.listen(serverPort);
+
+/* tcp tunnel config */
 
 client({
-    host : "localhost",
+    host : "255.255.255.255",
     port : 8010
   },
   {
     host : 'localhost',
-    port : 3000
+    port : serverPort
   },
   40
 )
