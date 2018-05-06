@@ -7,11 +7,11 @@
   "description": "Expose localhost to the internet using tcp sockets",
   "main": "index.js",
   "scripts": {
-    "start" : "node ./example/remoteServer.js"
+    "start": "node ./example/remoteServer.js"
   },
-  "repository" : { 
-    "type" : "git", 
-    "url" : "https://github.com/Jakubscode/tcp-local-tunnel/tree/master"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jakubscode/tcp-local-tunnel/tree/master"
   },
   "author": "Kuba",
   "license": "MIT",
