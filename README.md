@@ -1,7 +1,7 @@
 # TCP-LOCAL-TUNNEL
 
 Simple module that allows to expose server from local network to the Internet.
-It's works similar to [localtunnel](https://github.com/localtunnel/localtunnel), but is more stable and simpler.
+It works similarly to [localtunnel](https://github.com/localtunnel/localtunnel), but is more stable and simpler.
 
 I'm not providing a service where you can acess your exposed local server, you will need to have some VPS or another machine connected to the internet with at least two open ports.
 
