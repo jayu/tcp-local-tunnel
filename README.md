@@ -3,11 +3,11 @@
 Simple module that allows to expose server from local network to the Internet.
 It works similarly to [localtunnel](https://github.com/localtunnel/localtunnel), but is more stable and simpler.
 
-I'm not providing a service where you can acess your exposed local server, you will need to have some VPS or another machine connected to the internet with at least two open ports.
+I'm not providing a service where you can access your exposed local server, you will need to have some VPS or another machine connected to the internet with at least two open ports.
 
 Module creates connection from your local server to your remote server via TCP and transmits data in both ways with established tunnel.
 
-This is extremly usefull when you need to access an IoT device (Raspberry PI i.e) running in your home network. For example you can turn off light (that you forgot to turn off, or just to make sure) in home from your workplace or any other place on Earth.
+This is extremely useful when you need to access an IoT device (Raspberry PI i.e) running in your home network. For example you can turn off light (that you forgot to turn off, or just to make sure) in home from your workplace or any other place on Earth.
 
 I'm also working on NodeMCU implementation of client side module (ESP8266 devices)
 
@@ -16,7 +16,7 @@ Module supports:
 * http
 * websocket
 * large files transfer (i.e streaming video from your house, local cloud storage)
-* mayby other prodocols that uses TCP
+* maybe other protocols that uses TCP
 
 The stability mostly depends on your local internet connection quality.
 
@@ -149,7 +149,7 @@ const { proxyServer } = require('tcp-local-tunnel')
 
 proxyServer({
   proxyPort: 80, // remote port to access exposed local machine
-    tunnelPort: 8010 // tunnel port
+    tunnelPort: 8010, // tunnel port
     timeout : 5000 // time after request is rejected when there are no tunnel connections
 })
 ```
