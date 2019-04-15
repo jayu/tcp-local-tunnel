@@ -1,6 +1,6 @@
 {
   "name": "tcp-local-tunnel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "node": "8.5.0"
   },
