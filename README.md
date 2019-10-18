@@ -153,3 +153,6 @@ proxyServer({
     timeout : 5000 // time after request is rejected when there are no tunnel connections
 })
 ```
+
+## License
+MIT
