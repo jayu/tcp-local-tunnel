@@ -1,22 +1,29 @@
 {
   "name": "tcp-local-tunnel",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "engines": {
-    "node": "8.5.0"
+    "node": ">=8.5.0"
   },
-  "description": "Expose localhost to the internet using tcp sockets",
+  "description": "Expose localhost to the Internet using TCP sockets",
   "main": "index.js",
+  "files": [
+    "lib",
+    "index.js"
+  ],
   "scripts": {
-    "start": "node ./example/remoteServer.js"
+    "start-example": "node ./example/remoteServer.js",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jakubscode/tcp-local-tunnel/tree/master"
+    "url": "https://github.com/jayu/tcp-local-tunnel/tree/master"
   },
-  "author": "Kuba",
+  "homepage": "https://github.com/jayu/tcp-local-tunnel#tcp-local-tunnel",
+  "author": "Jakub Mazurek @jayu",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "release-it": "^14.2.1"
   }
 }
