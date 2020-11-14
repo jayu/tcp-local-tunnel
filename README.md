@@ -1,4 +1,16 @@
-# TCP-LOCAL-TUNNEL
+<h3 align="center">
+  <code>tcp-local-tunnel</code>
+</h3>
+
+<p align="center">
+  Expose localhost to the Internet using TCP sockets!
+</p>
+
+---
+
+<img alt="tcp-local-tunnel version" src="https://img.shields.io/npm/v/tcp-local-tunnel"> <img alt="tcp-local-tunnel license" src="https://img.shields.io/npm/l/tcp-local-tunnel"> <img alt="tcp-local-tunnel PRs welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square">
+
+## About
 
 Simple module that allows to expose server from local network to the Internet.
 It works similarly to [localtunnel](https://github.com/localtunnel/localtunnel), but is more stable and simpler.
@@ -11,16 +23,17 @@ This is extremely useful when you need to access an IoT device (Raspberry PI i.e
 
 I'm also working on NodeMCU implementation of client side module (ESP8266 devices)
 
-Module supports:
-
-* http
-* websocket
-* large files transfer (i.e streaming video from your house, local cloud storage)
-* maybe other protocols that uses TCP
+Module supports any protocol that uses TCP, eg. HTTP, Websocket.
 
 The stability mostly depends on your local internet connection quality.
 
-There is one security issue. If somebody knows host and port of your remote server which local machine connects to, then he also can creates tunnel and redirect remote requests to his machine instead of yours. I'm working on solution...
+## Security caveats
+
+If somebody knows host and port of your remote server which local machine connects to, then he also can creates tunnel and redirect remote requests to his machine instead of yours. 
+
+Tunnel connection is not encrypted, so potential attacker can read data you are sending.
+
+See [alternatives](#alternatives) for more secure solutions.
 
 ## Basic-usage
 
@@ -55,7 +68,7 @@ proxyServer({
 });
 ```
 
-## Run server and expose it immediatly (code in `./example`)
+## Run server and expose it immediately (code in `./example`)
 
 ### Code to run on local machine
 
@@ -153,6 +166,12 @@ proxyServer({
     timeout : 5000 // time after request is rejected when there are no tunnel connections
 })
 ```
+
+## Alternatives
+
+You can use SSH remote port forwarding to achieve the same. It's encrypted and hence more secure.
+
+See Remote Forwarding chapter [https://www.ssh.com/ssh/tunneling/example](https://www.ssh.com/ssh/tunneling/example)
 
 ## License
 MIT
