@@ -173,5 +173,13 @@ You can use SSH remote port forwarding to achieve the same. It's encrypted and h
 
 See Remote Forwarding chapter [https://www.ssh.com/ssh/tunneling/example](https://www.ssh.com/ssh/tunneling/example)
 
+## Contributing
+
+Project is open to contributions, just rise an issue if you have some ideas about features or you noticed a bug. After discussion we can approach implementation :)
+
+## Made with 🧠 by [@jayu](https://github.com/jayu)
+
+I hope that this small piece of software will help you build fancy IoT systems. If this tool was useful, don't hesitate to give it a 🌟!
+
 ## License
 MIT
