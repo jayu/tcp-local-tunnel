@@ -13,7 +13,7 @@ const server = express();
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded());
 
-server.get('/someurl', function(req, res, next) {
+server.get('/someurl', function (req, res, next) {
   res.send('some url page');
 });
 server.get('/video.mp4', (req, res) => {
@@ -26,11 +26,12 @@ server.get('/long.json', (req, res) => {
   console.log('contetn length', Buffer.byteLength(file));
   res.json(file);
 });
-server.get('/', function(req, res, next) {
+server.get('/', function (req, res, next) {
   res.send('Main page');
 });
 
 server.listen(serverPort);
+
 
 /* tcp tunnel config */
 
@@ -38,10 +39,13 @@ client(
   {
     host: '255.255.255.255',
     port: 8010
+    // Uncomment below to enable transport encryption::
+    // encKey: 'DwUuKDoFtHVWrWGfS4rz1pm7bOTZ988o',
+    // encIv: '435435f432543532'
   },
   {
     host: 'localhost',
     port: serverPort
   },
-  40
+  40 // number of concurrent open tunnels
 );
